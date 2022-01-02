@@ -1,0 +1,5 @@
+{
+	"@primary-color":"@blue-6",
+	"@text-color": "fade(@black, 85%)",
+  "@text-color-secondary": "fade(@black, 45%)"
+}
