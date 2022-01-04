@@ -21,7 +21,7 @@ const Fade = styled.div`
   opacity: 0;
   animation-delay: ${(props) => props.sec}s;
   animation-name: ${fadeIn};
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-fill-mode:forwards;
 `;
 
@@ -32,7 +32,7 @@ const HomeEle = ({ className, articles }) => {
     if (articles) {
       // (index+1)*0.5
       const articlesContainer = articles.map((item, index) => (
-        <Fade out={false} sec={(index + 1) * 2} key={item.name}>
+        <Fade out={false} sec={(index + 1) } key={item.name}>
           <ArticleCard article={item} />
         </Fade>
       ));
@@ -43,7 +43,7 @@ const HomeEle = ({ className, articles }) => {
 };
 
 export async function getStaticProps(context) {
-  const call_articles = await fetch("http://localhost:3000/api/getArticles");
+  const call_articles = await fetch("http://localhost:3001/api/getArticles");
 
   const articles = await call_articles.json();
 

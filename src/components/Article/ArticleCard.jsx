@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import moment from "moment";
+import Link from 'next/link'
 
 const ArticleCardEle = ({ className, article }) => {
-  console.log(article);
-
   return (
     <div className={className}>
       <div className="card-header">
         <div className="card-title">
+          <Link href={`/article/${article.id}`}>
           <a>{article.name}</a>
+          </Link>
         </div>
         <div className="card-tag">
           <p>標籤：{article.type}</p>
